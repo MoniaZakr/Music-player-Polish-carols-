@@ -5,13 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music player(Polish carols)</title>
+    <script src="https://kit.fontawesome.com/ba64a13dd4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1 class="header">Happy Christmas</h1>
         <section class="music-container">
-           <div class="music-player"></div>
+            <div class="music-player">
+                <div class="playlist-menu">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <!-- <div class="img-container">
+                    <img src="photos/Bóg się rodzi.jpg" class="cover" id="cover" alt="Record">
+                </div> -->
+                <div class="music-info">
+                    <h2 id="title">Bóg się rodzi</h2>
+                    <!-- kontener na pasek postępu -->
+                    <div class="progress-container">
+                         <div class="progress"></div>
+                    </div> 
+                </div>
+                <div class="volume-container">
+                    <i class="fa-solid fa-volume-low"></i>
+                    <input type="range" min="0" max="100" value="30" class="slider">
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <audio src="" id="audio"></audio>
+
+                <div class="navigation">
+                    <button class="action-btn" id="prev"><i class="fa-solid fa-backward"></i></button>
+                    <button class="action-btn action-btn-play" id="play"><i class="fa-solid fa-play"></i></i></button>
+                    <button class="action-btn" id="next"><i class="fa-solid fa-forward"></i></button>
+                </div>
+            </div>
+            <div class="playlist">
+                <h2 class="playlistHeader">Playlist</h2>
+                <ul class="song-list"></ul>
+            </div>
+        </div>
+           
         </section>
     </div>
     

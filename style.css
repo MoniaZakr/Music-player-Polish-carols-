@@ -13,26 +13,22 @@ body {
     flex-direction: column;
     justify-content:  space-between;
     align-content:center;
-    /* position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; */
     height: 100vh;
     width: 100vw; 
     background-color: #ff0000 ;
 }
-.container i {
+
+.container .snow {
     position: absolute;
     background: #fff;
     border-radius: 100%;
     animation: snowfall linear infinite;
-   
 }
-section i:nth-child(even) {
-    background: transparent;
-    border: 1px solid #fff;
+
+.container .snow:nth-child(even) {
+    background: #e8e6eb1d;
 }
+
 @keyframes snowfall {
     0% {
         transform: translateY(0);
@@ -48,34 +44,161 @@ section i:nth-child(even) {
         transform: translateY(100vh);
         opacity: 0;
     }
-
 }
 
 .music-container {
-    /* background-color: black; */
-    /* flex-grow: 2; */
-    /* position: absolute; */
     width: 450px;
     height: 450px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.music-player {
-    /* position: relative; */
+.playlist-menu {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(#fff, #e4e3e8);
-    box-shadow: 0px 0px 10px 10px #ffd700; ;
-    display: flex;
-    border-radius: 50%;
-    border: 1px solid #ffd700;
-   
-    z-index: 1;
+    text-align: center;
+    margin-top: 1rem;
+    color: #ead873;
+    transition: 0.4s;
 }
+
+.playlist-menu:hover {
+    color: #ffd700;
+}
+
 .header {
     text-align: center;
     font-size: 2.3rem;
     letter-spacing: 1px;
     color: #ffd700;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
 }
+
+.music-player {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image:url(photos/Bóg\ się\ rodzi.jpg);
+    background-position: center;
+    background-size: cover; 
+    color: #ff0000; 
+    box-shadow: 0 0 5px 5px  #ead873;;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 5;
+    border-radius: 50%;
+}
+
+.music-info {
+    margin: 0 0 9rem
+}
+
+.title {
+    font-size: 2rem;
+
+}
+
+.progress-container {
+    opacity: 0;
+    background-color: #ead873;;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+    height: 1px;
+    width: 100px;
+}
+
+.progress {
+    background-color: #ff0000;
+    border-radius: 8px;
+    height: 100%;
+    width: 0;
+    transition: width 0.1s linear;
+    cursor: pointer;
+}
+
+.music-player.play .progress-container {
+    opacity: 1;
+}
+
+/* .img-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+   /* background-color: #1b1616; */
+   /* height: 100px;  */
+   /* width: 100%; */
+   /* z-index: 2; */
+/* }  */
+
+/* .img-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50% 50% 0 0;
+    /* box-shadow: 3px 0px 5px 5px #433f2b; */
+/* }  */
+
+.navigation {
+    display: flex;
+    justify-content: space-between; 
+    width: 120px;
+   
+}
+
+.action-btn {
+    padding: 5px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color:#ff0000;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.action-btn:hover {
+    color: #f35252;
+}
+.action-btn-play{
+   font-size: 1.7rem;
+}
+
+.volume-container {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+input.slider {
+    margin: 0 0.5rem;
+    max-height: 2px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #ead873;;
+    border-radius: 8px;
+    outline: none;
+}  
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    border-radius: 50%;
+    background: #ff0000;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff0000;
+    cursor: pointer;
+  }
