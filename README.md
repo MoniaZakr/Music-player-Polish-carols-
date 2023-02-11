@@ -1,1 +1,2 @@
 # Music-player-Polish-carols-
+Music player has the ability to play, pause, skip to the previous and next songs, set the volume, update the progress bar as the music is playing and display the song's title, and cover image. It is built using JavaScript, HTML, and CSS. A playlist creates dynamically inserting list elements, for each song in the array and adding event listeners to each list elemen,t so that the player can change the song when a list element is clicked. 
