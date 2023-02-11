@@ -7,6 +7,12 @@ const progress = document.querySelector(".progress");
 const progressContainer = document.querySelector(".progress-container");
 const title = document.querySelector("#title");
 const volume = document.querySelector(".slider");
+const ulList = document.querySelector(".song-list");
+const playlist = document.querySelector(".playlist");
+const playlistMenu = document.querySelector(".playlist-menu");
+const playlistClose = document.querySelector(".icon-close");
+
+
 
 let songIndex = 0;
 
@@ -20,6 +26,11 @@ const songs = [
         name:"Gdy śliczna Panna",
         img:"Gdy śliczna Panna",
         song:"Gdy śliczna Panna"
+    },
+    {
+        name:"Gore gwiazda",
+        img:"Gore gwiazda",
+        song:"Gore gwiazda"
     },
     {
         name:"Jezus malusieńki",
@@ -39,7 +50,6 @@ const songs = [
 
 ]
 
-
 window.addEventListener("load",()=> {
     loadSong(songIndex);
 })
@@ -49,7 +59,6 @@ function loadSong(indexNumb) {
     audio.src = `carols/${songs[indexNumb].song}.mp3`;
     musicPlayer.style.backgroundImage = `url("photos/${songs[indexNumb].img}.jpg")`;
 }
-
 
 function playSong() {
     musicPlayer.classList.add("play");
@@ -75,7 +84,6 @@ function prevSong() {
 }
 
 function nextSong() {
-  
     songIndex++;
     if(songIndex >= songs.length) {
         songIndex = 0;
@@ -98,13 +106,19 @@ function setProgress(e) {
     audio.currentTime = (clickX/width) * duration;
 }
 
-const ulList = document.querySelector(".song-list");
-
 for(let i=0; i<songs.length; i++) {
-    let listElement = `<li li-index="${i}" class="liElement">
-                           <p>${songs[i].name}</p>
-                           <audio src="carols/${songs[i].song}.mp3" id="audio"></audio>
-                           </li>`
+    let className = "liElement";
+    if(i === 0) {
+        className += " active"
+    }
+    let listElement = `<li li-index="${i}" class=" ${className}">
+       <div class="img-container">
+          <img src="photos/${songs[i].img}.jpg" class="cover" id="cover" alt="Record">
+        </div> 
+       <p>${songs[i].name}</p> 
+      
+       <audio src="carols/${songs[i].song}.mp3" id="audio"></audio>
+    </li>`
     ulList.insertAdjacentHTML("beforeend", listElement)
 }
 
@@ -171,3 +185,9 @@ audio.addEventListener("ended", nextSong);
 volume.addEventListener("input", function(){
     audio.volume = volume.value/100
 });
+playlistMenu.addEventListener("click", function(){
+    playlist.classList.add("on")
+})
+playlistClose.addEventListener("click", function(){
+    playlist.classList.remove("on")
+})

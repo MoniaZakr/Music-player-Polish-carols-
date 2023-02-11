@@ -9,6 +9,10 @@ var progress = document.querySelector(".progress");
 var progressContainer = document.querySelector(".progress-container");
 var title = document.querySelector("#title");
 var volume = document.querySelector(".slider");
+var ulList = document.querySelector(".song-list");
+var playlist = document.querySelector(".playlist");
+var playlistMenu = document.querySelector(".playlist-menu");
+var playlistClose = document.querySelector(".icon-close");
 var songIndex = 0;
 var songs = [{
   name: "Bóg się rodzi",
@@ -18,6 +22,10 @@ var songs = [{
   name: "Gdy śliczna Panna",
   img: "Gdy śliczna Panna",
   song: "Gdy śliczna Panna"
+}, {
+  name: "Gore gwiazda",
+  img: "Gore gwiazda",
+  song: "Gore gwiazda"
 }, {
   name: "Jezus malusieńki",
   img: "Jezus malusieńki",
@@ -93,10 +101,14 @@ function setProgress(e) {
   audio.currentTime = clickX / width * duration;
 }
 
-var ulList = document.querySelector(".song-list");
-
 for (var i = 0; i < songs.length; i++) {
-  var listElement = "<li li-index=\"".concat(i, "\" class=\"liElement\">\n                           <p>").concat(songs[i].name, "</p>\n                           <audio src=\"carols/").concat(songs[i].song, ".mp3\" id=\"audio\"></audio>\n                           </li>");
+  var className = "liElement";
+
+  if (i === 0) {
+    className += " active";
+  }
+
+  var listElement = "<li li-index=\"".concat(i, "\" class=\" ").concat(className, "\">\n       <div class=\"img-container\">\n          <img src=\"photos/").concat(songs[i].img, ".jpg\" class=\"cover\" id=\"cover\" alt=\"Record\">\n        </div> \n       <p>").concat(songs[i].name, "</p> \n      \n       <audio src=\"carols/").concat(songs[i].song, ".mp3\" id=\"audio\"></audio>\n    </li>");
   ulList.insertAdjacentHTML("beforeend", listElement);
 }
 
@@ -160,5 +172,11 @@ progressContainer.addEventListener("click", setProgress);
 audio.addEventListener("ended", nextSong);
 volume.addEventListener("input", function () {
   audio.volume = volume.value / 100;
+});
+playlistMenu.addEventListener("click", function () {
+  playlist.classList.add("on");
+});
+playlistClose.addEventListener("click", function () {
+  playlist.classList.remove("on");
 });
 //# sourceMappingURL=main.dev.js.map
