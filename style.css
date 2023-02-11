@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
+:root {
+    --golden:#ffd700;
+    --white:#fff;
+    --light: #ead873;
+    --red:#ff0000;
+}
 
 body {
     margin: 0;
@@ -8,20 +14,21 @@ body {
     font-family: 'Satisfy', cursive; 
     overflow: hidden;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content:  space-between;
+    justify-content: space-between;
     align-content:center;
     height: 100vh;
     width: 100vw; 
-    background-color: #ff0000;
+    background-color: var(--red);
 }
 
 .container .snow {
     position: absolute;
-    background: #fff;
+    background: var(--white);
     border-radius: 100%;
     animation: snowfall linear infinite;
 }
@@ -57,19 +64,19 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 1rem;
-    color: #ead873;
+    color:  var(--light);
     transition: 0.4s;
 }
 
 .playlist-menu:hover {
-    color: #ffd700;
+    color: var(--golden);
 }
 
 .header {
     text-align: center;
     font-size: 2.3rem;
     letter-spacing: 1px;
-    color: #ffd700;
+    color:  var(--golden);
     margin-bottom: 40px;
 }
 
@@ -81,8 +88,8 @@ body {
     background-image:url(photos/Bóg\ się\ rodzi.jpg);
     background-position: center;
     background-size: cover; 
-    color: #ff0000; 
-    box-shadow: 0 0 5px 5px  #ead873;;
+    color: var(--red); 
+    box-shadow: 0 0 5px 5px var(--light);
     font-size: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -102,7 +109,7 @@ body {
 
 .progress-container {
     opacity: 0;
-    background-color: #ead873;;
+    background-color: var(--light);
     border-radius: 5px;
     cursor: pointer;
     margin: auto;
@@ -111,7 +118,7 @@ body {
 }
 
 .progress {
-    background-color: #ff0000;
+    background-color: var(--red);
     border-radius: 8px;
     height: 100%;
     width: 0;
@@ -134,7 +141,7 @@ body {
     background: none;
     border: none;
     font-size: 1.5rem;
-    color:#ff0000;
+    color: var(--red);
     cursor: pointer;
     transition: 0.4s;
 }
@@ -164,7 +171,7 @@ input.slider {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: #ead873;;
+    background: var(--light);
     border-radius: 8px;
     outline: none;
 }  
@@ -173,7 +180,7 @@ input.slider {
     -webkit-appearance: none;
     width: 25px;
     border-radius: 50%;
-    background: #ff0000;
+    background: var(--red);
     cursor: pointer;
 }
 
@@ -181,7 +188,7 @@ input.slider {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #ff0000;
+    background: var(--red);
     cursor: pointer;
   }
 
@@ -196,8 +203,8 @@ input.slider {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:#ff0000;
-    color: #ead873;
+    background-color: var(--red) ;
+    color: var(--light);
     font-size: 1.5rem;
     font-weight: 700;
     z-index: 99;
@@ -217,7 +224,7 @@ input.slider {
     left: 0;
     height: 0;
     border-bottom: 70px solid transparent;
-    border-left: 70px solid #ffd700;
+    border-left: 70px solid var(--golden);
     transition: 0.3s; 
 }
 
@@ -243,7 +250,7 @@ div.icon-close {
   left: 50%;
   width: 20px;
   height: 2px;
-  background-color: #f8f7ee;
+  background-color: var(--white);
   transform: translate(-50%, -50%) rotate(45deg)
 }
 
@@ -252,7 +259,7 @@ div.icon-close {
   }
 
 .playlist-header {
-    color:#ffd700;
+    color: var(--golden);
     letter-spacing: 3px;
     margin: 25px 0;
 }
@@ -261,17 +268,17 @@ div.icon-close {
     flex-basis: 100%;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color:#ffd700 #ead873;;
+    scrollbar-color: var(--golden) var(--light);
     padding: 0 15px;
 }
 
 .song-list::-webkit-scrollbar {
     width: 0.2em;
-    background-color:#ead873;
+    background-color: var(--light);
 }
   
 .song-list::-webkit-scrollbar-track {
-    background-color: #ead873;
+    background-color: var(--light);
 }
   
 .liElement {
