@@ -9,11 +9,8 @@ const title = document.querySelector("#title");
 const volume = document.querySelector(".slider");
 const ulList = document.querySelector(".song-list");
 const playlist = document.querySelector(".playlist");
-const playlistMenu = document.querySelector(".playlist-menu");
+const playlistMenu = document.querySelector(".playlist-menu i");
 const playlistClose = document.querySelector(".icon-close");
-
-
-
 let songIndex = 0;
 
 const songs = [
@@ -185,8 +182,9 @@ audio.addEventListener("ended", nextSong);
 volume.addEventListener("input", function(){
     audio.volume = volume.value/100
 });
+   
 playlistMenu.addEventListener("click", function(){
-    playlist.classList.add("on")
+     playlist.classList.add("on")
 })
 playlistClose.addEventListener("click", function(){
     playlist.classList.remove("on")
